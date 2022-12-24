@@ -42,7 +42,7 @@ public class OrderTest {
         this.comment = comment;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Имя: {0}, фамилия: {1}, адрес: {2}, метро: {3}, телефон: {4}, когда: {5}, на сколько: {6}, цвет: {7}, коментарий: {8}")
     public static Object[][] getInformation() {
         return new Object[][]{
                 {"Антон", "Сломов", "Смоленская, 9", "Первомайская", "890012312323", "01.01.2023", "сутки", "чёрный жемчуг", "жду в 19:00"},

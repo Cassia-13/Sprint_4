@@ -15,7 +15,7 @@ public class LogoTest {
     private WebDriver driver;
 
     @Test
-    public void logoScooterTest() {
+    public void logoScooterHomePageTest() {
 
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -26,17 +26,36 @@ public class LogoTest {
         objectHomePage.clickOnLogoScooter();
 
         Assert.assertEquals("Ты попал не на главную страницу", baseUrl, driver.getCurrentUrl());
+    }
 
+    @Test
+    public void logoScooterOrderPageTest() {
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        String baseUrl = "https://qa-scooter.praktikum-services.ru/";
+        driver.get(baseUrl);
+
+        HomePage objectHomePage = new HomePage(driver);
         objectHomePage.clickOnOrderHead();
         objectHomePage.clickOnLogoScooter();
 
         Assert.assertEquals("Ты попал не наглавную страницу", baseUrl, driver.getCurrentUrl());
+    }
 
+    @Test
+    public void logoScooterOrderStatusPageTest() {
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        String baseUrl = "https://qa-scooter.praktikum-services.ru/";
+        driver.get(baseUrl);
+
+        HomePage objectHomePage = new HomePage(driver);
         objectHomePage.goToPageStatus("12344");
         objectHomePage.clickOnLogoScooter();
 
         Assert.assertEquals("Ты попал не наглавную страницу", baseUrl, driver.getCurrentUrl());
     }
+
 
     @Test
     public void logoYandexTest() {

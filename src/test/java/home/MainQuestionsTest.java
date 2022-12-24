@@ -23,7 +23,7 @@ public class MainQuestionsTest {
         this.answer = answer;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Вопрос {0} Ответ: {1}")
     public static Object[][] getQuestionAndAnswer() {
         return new Object[][]{
                 {"Сколько это стоит? И как оплатить?", "Сутки — 400 рублей. Оплата курьеру — наличными или картой."},
